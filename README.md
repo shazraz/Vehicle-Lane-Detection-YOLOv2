@@ -8,7 +8,9 @@ This repository contains a combined pipeline for lane finding and vehicle detect
 ### Creating YOLOv2 Keras models
 1. Download the configuration files & weights for YOLOv2 trained on the COCO and PASCAL data sets from [here](https://pjreddie.com/darknet/yolo/). 
 
-1. Use ```yad2k.py``` in the YAD2K folder to convert the darknet cfg files and weights to Keras 1.2.2 ```.h5``` files. This will also generate anchor files. Alternatively, use the ones located in this repo [here](https://github.com/shazraz/Vehicle-Lane-Detection-YOLOv2/tree/master/model).
+1. Use ```yad2k.py``` in the YAD2K folder to convert the darknet cfg files and weights to Keras 1.2.2 ```.h5``` files. This will also generate anchor files. 
+
+1. Use ```test_yolo.py``` in the YAD2K folder to test a directory of images (use test_images). Specify the path for the appropriate anchor file and classes (VOC or COCO). 
 
 ### Processing the videos
 1. Launch the jupyter notebook, select the ROI src/dst points & color thresholds for the appropriate video.
