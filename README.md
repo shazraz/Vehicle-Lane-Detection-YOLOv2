@@ -1,14 +1,14 @@
 # Vehicle & Lane Detection
 
 ## Overview
-This repository contains a combined pipeline for lane finding and vehicle detection. The lane finding algorithm is based off the Advanced Lane Lines project done for Udacity's SDC Term 1 but improved with better thresholding techniques and smoothing techniques. The vehicle detection portion compares LeNet-5 to YOLOv2. The YOLOv2 model was built using a modified version of the YAD2K project to change the Keras calls to v1.2.2 for compatibility with the SDC Term 1 conda environment. This is only tested for converting the DarkNet models to Keras models, re-training of models has not been tested.
+This repository contains a combined pipeline for lane finding and vehicle detection. The lane finding algorithm is based off the Advanced Lane Lines project done for Udacity's SDC Term 1 but improved with better thresholding techniques and smoothing techniques. The vehicle detection portion compares LeNet-5 to YOLOv2. The YOLOv2 model was built using a modified version of the YAD2K project to change the Keras calls to v1.2.1 for compatibility with the SDC Term 1 conda environment. This is only tested for converting the DarkNet models to Keras models, re-training of models has not been tested.
 
 ## Usage
 
 ### Creating YOLOv2 Keras models
 1. Download the configuration files & weights for YOLOv2 trained on the COCO and PASCAL data sets from [here](https://pjreddie.com/darknet/yolo/). 
 
-1. Use ```yad2k.py``` in the YAD2K folder to convert the darknet cfg files and weights to Keras 1.2.2 ```.h5``` files. This will also generate anchor files. 
+1. Use ```yad2k.py``` in the YAD2K folder to convert the darknet cfg files and weights to a Keras 1.2.1 ```.h5``` model. This will also generate anchor files. 
 
 1. Use ```test_yolo.py``` in the YAD2K folder to test a directory of images (use test_images). Specify the path for the appropriate anchor file and classes (VOC or COCO). 
 
