@@ -135,15 +135,15 @@ def find_centers(img):
             
     return np.asarray(l_centers, dtype=np.int32), np.asarray(r_centers, dtype=np.int32)
 
-def get_coeff(log, centers, deg=2):
-    log.write('{} Y-values are {}\n'.format(datetime.datetime.now(),centers[:,1]))
-    log.write('{} X-values are {}\n'.format(datetime.datetime.now(),centers[:,0]))
+def get_coeff(centers, deg=2):
+    #log.write('{} Y-values are {}\n'.format(datetime.datetime.now(),centers[:,1]))
+    #log.write('{} X-values are {}\n'.format(datetime.datetime.now(),centers[:,0]))
     if centers.shape[0]>3:
         coeff = np.polyfit(centers[:,1], centers[:,0], deg)
     else:
         coeff = np.polyfit(centers[:,1], centers[:,0], 1)
         coeff = np.insert(coeff, 0, 0)
-    log.write('{} Co-efficients are {}\n'.format(datetime.datetime.now(),coeff))
+    #log.write('{} Co-efficients are {}\n'.format(datetime.datetime.now(),coeff))
     return coeff
 
 def get_ROC_offset(img, l_centers, r_centers, deg=2):
@@ -205,19 +205,8 @@ def check_centers(l_centers, r_centers, z_score):
     
     return l_centers[lz_score<z_score], r_centers[rz_score<z_score]
 
-def create_binary(img, img_points, obj_points, mtx, dist, L_thresh = (215, 255), B_thresh = (135, 255)):
-    
-    #Thresholds for test video
-    #L_thresh = (215,255)
-    #B_thresh = (150,255)
-    
-    #Thresholds for challenge video
-    #L_thresh = (205,255)
-    #B_thresh = (135,255)
-    
-    #Undistort the image
-    img = img_utils.undistort(img, img_points, obj_points, mtx, dist)
-    
+def create_binary(img, L_thresh = (215, 255), B_thresh = (135, 255)):
+        
     #Use L-channel to select white pixels
     W_binary = color_utils.LAB_threshold(img, 'L', L_thresh)
     #Use B-channel to select yellow pixels
