@@ -1,7 +1,7 @@
 # Vehicle & Lane Detection
 
 ## Overview
-This repository contains a combined pipeline for lane finding and vehicle detection. The lane finding algorithm is based off the Advanced Lane Lines project done for Udacity's SDC Term 1 but improved with better thresholding techniques and smoothing techniques. The vehicle detection portion compares LeNet-5 to YOLOv2. The YOLOv2 model was built using a modified version of the YAD2K project to change the Keras calls to v1.2.1 for compatibility with the SDC Term 1 conda environment. This is only tested for converting the DarkNet models to Keras models, re-training of models has not been tested.
+This repository contains a combined pipeline for lane finding and vehicle detection. The lane finding algorithm is based off the Advanced Lane Lines project done for Udacity's SDC Term 1 but improved with better thresholding techniques and smoothing techniques. The vehicle detection portion compares LeNet-5 to YOLOv2. The YOLOv2 model was built using a modified version of the YAD2K project to change the Keras calls to v1.2.1 for compatibility with the SDC Term 1 conda environment. This is only tested for converting the DarkNet models to Keras models, re-training of models has not been tested. Complete write-up [here](https://medium.com/@raza.shahzad/vehicle-detection-lane-finding-using-opencv-lenet-5-2-2-cfc4fea330b4).
 
 ## Usage
 
